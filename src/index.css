@@ -23,3 +23,9 @@ body {
   height: 100%;
   color: white;
 }
+
+@media screen and (max-width: 600px) {
+  body {
+    padding: 20px;
+  }
+}

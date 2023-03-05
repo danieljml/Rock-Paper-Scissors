@@ -24,7 +24,7 @@ const Popup = ({ open, handleCloseRules }) => {
           </IconButton>
         </Box>
         <Box sx={{ padding: '20px 45px 25px 45px' }}>
-          <img src={rules} alt="rules" />
+          <img src={rules} alt="rules" width={'100%'} />
         </Box>
       </Dialog>
     </>

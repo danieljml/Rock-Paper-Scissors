@@ -4,21 +4,27 @@ import scissors from '../../images/icon-scissors.svg';
 import { Container, IconButton } from '@mui/material';
 import { container, actions } from './styles';
 
-const selectionType = (img, name) => <img style={{ width: '4rem', height: '4.5rem' }} src={img} alt={name} name={name} />;
+const selectionType = (img, name) => <img className="action__images" src={img} alt={name} name={name} />;
 
-const Game = ({ setSelection, children }) => {
-  const handlerOption = e => {
+const seleccionTypes = {
+  rock: { name: 'rock', img: rock },
+  paper: { name: 'paper', img: paper },
+  scissors: { name: 'scissors', img: scissors },
+};
+
+const Game = ({ setUser, setComputer, setLoading, children }) => {
+  const computerSelection = () => Object.keys(actions).at(Math.round(Math.random() * 2));
+
+  const handlerOptions = e => {
     const res = e.target.name || e.target.getAttribute('name');
-    setSelection(res);
+    setLoading(false);
+    setUser(seleccionTypes[res]);
+    setComputer(seleccionTypes[computerSelection()]);
   };
 
-  const actionList = [
-    { name: 'scissors', img: scissors },
-    { name: 'paper', img: paper },
-    { name: 'rock', img: rock },
-  ].map(action => {
+  const actionList = Object.values(seleccionTypes).map(action => {
     return (
-      <IconButton key={`key-${action.name}`} onClick={handlerOption} sx={actions[action.name]} name={action.name}>
+      <IconButton key={`key-${action.name}`} onClick={handlerOptions} sx={actions[action.name]} name={action.name}>
         {selectionType(action.img, action.name)}
       </IconButton>
     );

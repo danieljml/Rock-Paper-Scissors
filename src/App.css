@@ -1,0 +1,23 @@
+.action__images {
+  width: 4.5rem;
+  height: 5rem;
+}
+
+.battleImage {
+  width: 7rem;
+  height: 7.5rem;
+}
+
+@media screen and (max-width: 900px) {
+  .battleImage {
+    width: 4rem;
+    height: 4.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .action__images {
+    width: 3.5rem;
+    height: 4rem;
+  }
+}

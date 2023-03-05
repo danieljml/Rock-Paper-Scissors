@@ -4,7 +4,7 @@ import { container } from './styles';
 
 const CustomeButton = ({ align, children }) => {
   return (
-    <Box width={'100%'} sx={{ ...container, justifyContent: align }}>
+    <Box width={'100%'} sx={{ ...container, justifyContent: { xs: 'center', md: align } }}>
       {children}
     </Box>
   );
