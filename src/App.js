@@ -54,12 +54,12 @@ function App() {
       </Header>
       {loading ? (
         <Game {...rest}>
-          <Rules align={'center'} title={title} handlerRules={handlerRules} />
+          <Rules align={'flex-end'} title={title} handlerRules={handlerRules} />
           <Popup open={open} handleCloseRules={handleCloseRules} />
         </Game>
       ) : (
         <Battle {...rest} score={score} setScore={setScore}>
-          <Rules align={'flex-end'} title={title} handlerRules={handlerRules} />
+          <Rules title={title} handlerRules={handlerRules} />
           <Popup open={open} handleCloseRules={handleCloseRules} />
         </Battle>
       )}
